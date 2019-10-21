@@ -8,7 +8,6 @@ class CommonController extends CI_Controller
     }
 }
 
-
 class FrontendController extends CommonController
 {
     public function __construct()
