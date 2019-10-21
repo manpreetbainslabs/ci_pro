@@ -49,6 +49,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
+$route['admin'] = 'admin/dashboard';
 $route['default_controller'] = 'tempconvert';
 $route['tempconvert/convert'] = 'tempconvert/convert';
 $route['contact'] = 'contact';
@@ -57,3 +58,4 @@ $route['news/api_create_news'] = 'news/api_create_news';
 $route['news/(:any)'] = 'news/view/$1';
 $route['news'] = 'news';
 $route['(:any)'] = 'pages/view/$1';
+$route['admin/login'] = 'admin/login';

@@ -2,14 +2,14 @@
 class News_model extends CI_Model {
 
 	public function __construct(){
-					$this->load->database();
+		$this->load->database();
 	}
 
 	public function get_news($slug = FALSE){
 		if ($slug === FALSE)
 		{
-						$query = $this->db->get('news');
-						return $query->result_array();
+			$query = $this->db->get('news');
+			return $query->result_array();
 		}
 		$query = $this->db->get_where('news', array('slug' => $slug));
 		return $query->row_array();
@@ -24,11 +24,11 @@ class News_model extends CI_Model {
 		}
 		$slug = url_title($this->input->post('title'), 'dash', TRUE);
 		$data = array(
-				'title' => $this->input->post('title'),
-				'slug' => $slug,
-				'text' => $this->input->post('text'),
-				'img_url' => $img_url
-		);
+					'title' => $this->input->post('title'),
+					'slug' => $slug,
+					'text' => $this->input->post('text'),
+					'img_url' => $img_url
+					);
 		return $this->db->insert('news', $data);
 	}
 	public function api_set_news($data)
@@ -44,8 +44,8 @@ class News_model extends CI_Model {
 		);
 		if($this->db->insert('news', $save_data)){
 			return json_encode(array('status' => True,
-															'title' => $title,
-															'slug' => $slug));
+									'title' => $title,
+									'slug' => $slug));
 		}else{
 			return json_encode(array('status' => False,));
 		}
